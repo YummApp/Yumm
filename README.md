@@ -1,7 +1,7 @@
 # Yumm
 ## Command prompts for backend:
   ### Before working with django create and activate virtual environment. Must activate everytime you are working on backend.
-  $ python3 -m venv env
+  $ python3 -m venv env <br />
   $ source env/bin/activate
 
   ### To deactivate virtual environment
