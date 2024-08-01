@@ -15,3 +15,9 @@
 
   ### Creating apps (replace <app name> with desired name)
   $ python manage.py startapp <app name>
+
+  ### Install Homebrew (Mac) and install psql (PostgreSQL tool)
+  $ brew install psql
+
+  ### Use psql to connect to database (you will be prompted for password after)
+  $ psql -h database-1.c9ummsu6kjvh.us-east-2.rds.amazonaws.com -U yummappdev -d yummdb
