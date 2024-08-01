@@ -13,8 +13,8 @@
   ### If you install any packages or dependencies, update requirements.txt
   $ python -m pip freeze > requirements.txt
 
-  ### Creating apps (replace <app name> with desired name)
-  $ python manage.py startapp <app name>
+  ### Creating apps (replace (app name) with desired name)
+  $ python manage.py startapp (app name)
 
   ### Install Homebrew (Mac) and install psql (PostgreSQL tool)
   $ brew install psql
