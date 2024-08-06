@@ -1,120 +1,132 @@
 //
-//  UserSignUpView.swift
-//  Yumm
+//  SignUpView.swift
+//  Yumm App
 //
-//  Created by Vamsi Putti on 8/4/24.
+//  Created by Akshar Chunduri on 8/5/24.
 //
 
 import SwiftUI
 
 struct UserSignUpView: View {
-    
+    @State private var email: String = ""
     @State private var username: String = ""
     @State private var password: String = ""
-    
+    @State private var confirmPassword: String = ""
+
     var body: some View {
         ZStack {
-            YummColors.lightPink
-                .ignoresSafeArea()
-
+            Color(hex: 0xFE9AC9)
+                .edgesIgnoringSafeArea(.all)
+            
             VStack {
-                VStack {
-                    Text("Welcome Back!")
-                        .font(Font.custom(YummFonts.QuicksandSemiBold, size: 24))
-                        .padding(.vertical)
-
-                    Text("Enter your username and password to continue.")
-                        .font(Font.custom(YummFonts.QuicksandLight, size: 16))
-                        .multilineTextAlignment(.center)
-                        .padding(.horizontal)
-
-                    Spacer()
-                        .frame(height: 20)
+                Spacer()
+                
+                VStack(spacing: 30) {
+                    Text("Get Started!")
+                        .font(.custom("Quicksand-Bold", size: 28))
+                        .foregroundColor(Color(hex: 0x0A0A0A))
                     
-                    TextField("Username", text: $username)
-                        .font(Font.custom(YummFonts.QuicksandRegular, size: 18))
-                        .padding()
-                    
-                    Spacer()
-                        .frame(height: 20)
-
-                    SecureField("Password", text: $password)
-                        .font(Font.custom(YummFonts.QuicksandRegular, size: 18))
-                        .padding()
-
-                    Spacer()
-                        .frame(height: 20)
-
-                    HStack {
-                        Spacer()
-
-                        Button {
+                    VStack(spacing: 25) {
+                        VStack(spacing: 10) {
+                            TextField("Email", text: $email)
+                                .padding(.bottom, 5)
+                                .font(.custom("Quicksand-Regular", size: 18))
                             
-                        } label: {
-                            Text("Login")
-                                .font(Font.custom(YummFonts.QuicksandBold, size: 16))
-                                .padding(15)
+                            Rectangle()
+                                .frame(height: 1)
+                                .foregroundColor(Color(hex: 0x0A0A0A))
                         }
-
-                        Spacer()
+                        .padding(.horizontal, 20)
+                        
+                        VStack(spacing: 10) {
+                            TextField("Username", text: $username)
+                                .padding(.bottom, 5)
+                                .font(.custom("Quicksand-Regular", size: 18))
+                            
+                            Rectangle()
+                                .frame(height: 1)
+                                .foregroundColor(Color(hex: 0x0A0A0A))
+                        }
+                        .padding(.horizontal, 20)
+                        
+                        VStack(spacing: 10) {
+                            SecureField("Password", text: $password)
+                                .padding(.bottom, 5)
+                                .font(.custom("Quicksand-Regular", size: 18))
+                            
+                            Rectangle()
+                                .frame(height: 1)
+                                .foregroundColor(Color(hex: 0x0A0A0A))
+                        }
+                        .padding(.horizontal, 20)
+                        
+                        VStack(spacing: 10) {
+                            SecureField("Confirm Password", text: $confirmPassword)
+                                .padding(.bottom, 5)
+                                .font(.custom("Quicksand-Regular", size: 18))
+                            
+                            Rectangle()
+                                .frame(height: 1)
+                                .foregroundColor(Color(hex: 0x0A0A0A))
+                        }
+                        .padding(.horizontal, 20)
                     }
-                    .background(YummColors.regPink)
-                    .foregroundColor(.white)
-                    .cornerRadius(20)
-                    .padding(.horizontal, 50)
-                    .padding(.vertical, 20)
+                    
+                    Button(action: {
+                        // Handle sign up action
+                    }) {
+                        Text("Sign Up")
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Color(hex: 0xFD499D))
+                            .cornerRadius(40)
+                            .font(.custom("Quicksand-Bold", size: 18))
+                    }
+                    .padding(.horizontal, 90)
                 }
-                .background(YummColors.cream)
-                .cornerRadius(20)
-                .padding()
+                .padding(.vertical, 40)
+                .background(Color(hex: 0xFFEBD6))
+                .cornerRadius(25)
+                .padding(.horizontal, 20)
+                .shadow(radius: 5)
+                
+                Spacer()
                 
                 Text("OR")
-                    .font(Font.custom(YummFonts.QuicksandBold, size: 32))
-                    .padding(5)
+                    .font(.custom("Quicksand-Bold", size: 24))
+                    .foregroundColor(Color(hex: 0x0A0A0A))
+                    .padding(.vertical, 20)
                 
-                /// Apple and Google Sign In
-                HStack {
-                    Spacer()
-                    
-                    Button {
-
-                    } label: {
-                        Text("Sign In With Google")
-                            .font(Font.custom(YummFonts.QuicksandBold, size: 16))
-                            .padding(15)
+                VStack(spacing: 15) {
+                    Button(action: {
+                        // Handle Google sign in
+                    }) {
+                        Text("Sign Up With Google")
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Color(hex: 0xFD499D))
+                            .cornerRadius(40)
+                            .font(.custom("Quicksand-Bold", size: 18))
                     }
-
-                    Spacer()
-                }
-                .background(YummColors.regPink)
-                .foregroundColor(.white)
-                .cornerRadius(20)
-                .padding(.horizontal, 50)
-                .padding(.vertical, 20)
-
-                HStack {
-                    Spacer()
+                    .padding(.horizontal, 40)
                     
-                    Button {
-
-                    } label: {
-                        Text("Sign In with Apple")
-                            .font(Font.custom(YummFonts.QuicksandBold, size: 16))
-                            .padding(15)
+                    Button(action: {
+                        // Handle Apple sign in
+                    }) {
+                        Text("Sign Up with Apple")
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Color(hex: 0xFD499D))
+                            .cornerRadius(40)
+                            .font(.custom("Quicksand-Bold", size: 18))
                     }
-
-                    Spacer()
+                    .padding(.horizontal, 40)
                 }
-                .background(YummColors.regPink)
-                .foregroundColor(.white)
-                .cornerRadius(20)
-                .padding(.horizontal, 50)
-
-                Text("Forgot Password?")
-                    .font(Font.custom(YummFonts.QuicksandBold, size: 12))
-                    .foregroundColor(YummColors.darkPink)
-                    .padding(15)
-                    .underline()
+                
+                .padding(.bottom, 45)
             }
         }
     }
@@ -122,4 +134,16 @@ struct UserSignUpView: View {
 
 #Preview {
     UserSignUpView()
+}
+
+extension Color {
+    init(hex: UInt, alpha: Double = 1.0) {
+        self.init(
+            .sRGB,
+            red: Double((hex >> 16) & 0xFF) / 255.0,
+            green: Double((hex >> 8) & 0xFF) / 255.0,
+            blue: Double(hex & 0xFF) / 255.0,
+            opacity: alpha
+        )
+    }
 }
