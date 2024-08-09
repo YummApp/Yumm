@@ -15,67 +15,68 @@ struct DietSelectView: View {
     let allergies = ["Peanuts", "Tree Nuts", "Soy", "Dairy", "Gluten", "Seafood", "Egg"]
 
     var body: some View {
-        ZStack {
-            Color(hex: 0x0A0A0A) // Background color
-                .edgesIgnoringSafeArea(.all)
-            
-            VStack(spacing: 5) {
-                Spacer().frame(height: 5)
+        NavigationView {
+            ZStack {
+                Color(hex: 0x0A0A0A) // Background color
+                    .edgesIgnoringSafeArea(.all)
                 
-                Text("Please select any dietary restrictions or")
-                    .font(.custom("Quicksand-Medium", size: 18))
-                    .foregroundColor(Color(hex: 0xFFEBD6))
-                    .padding(.horizontal, 20)
-                Text("allergies that apply to you:")
-                    .font(.custom("Quicksand-Medium", size: 18))
-                    .foregroundColor(Color(hex: 0xFFEBD6))
-                    .padding(.horizontal, 20)
-                Spacer().frame(height: 20)
-                Text("Diet")
-                    .font(.custom("Quicksand-Bold", size: 28))
-                    .foregroundColor(Color(hex: 0xFFEBD6))
-                Spacer().frame(height: 5)
-                LazyVGrid(columns: [GridItem(), GridItem()], spacing: 20) {
-                    ForEach(diets, id: \.self) { diet in
-                        dietButton(diet)
-                    }
-                }
-                .padding(.horizontal, 20)
-                
-                Spacer().frame(height: 10)
-                
-                Text("Allergies")
-                    .font(.custom("Quicksand-Bold", size: 28))
-                    .foregroundColor(Color(hex: 0xFFEBD6))
-                Spacer().frame(height: 5)
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 15) {
-                        ForEach(allergies, id: \.self) { allergy in
-                            allergyButton(allergy)
+                VStack(spacing: 5) {
+                    Spacer().frame(height: 5)
+                    
+                    Text("Please select any dietary restrictions or")
+                        .font(.custom("Quicksand-Medium", size: 18))
+                        .foregroundColor(Color(hex: 0xFFEBD6))
+                        .padding(.horizontal, 20)
+                    Text("allergies that apply to you:")
+                        .font(.custom("Quicksand-Medium", size: 18))
+                        .foregroundColor(Color(hex: 0xFFEBD6))
+                        .padding(.horizontal, 20)
+                    Spacer().frame(height: 18)
+                    Text("Diet")
+                        .font(.custom("Quicksand-Bold", size: 28))
+                        .foregroundColor(Color(hex: 0xFFEBD6))
+                    Spacer().frame(height: 5)
+                    LazyVGrid(columns: [GridItem(), GridItem()], spacing: 20) {
+                        ForEach(diets, id: \.self) { diet in
+                            dietButton(diet)
                         }
                     }
                     .padding(.horizontal, 20)
+                    
+                    Spacer().frame(height: 10)
+                    
+                    Text("Allergies")
+                        .font(.custom("Quicksand-Bold", size: 28))
+                        .foregroundColor(Color(hex: 0xFFEBD6))
+                    Spacer().frame(height: 5)
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 15) {
+                            ForEach(allergies, id: \.self) { allergy in
+                                allergyButton(allergy)
+                            }
+                        }
+                        .padding(.horizontal, 20)
+                    }
+                    
+                    Spacer().frame(height: 30)
+                    
+                    NavigationLink(destination: CuisineSelectView().navigationBarHidden(true)) {
+                        Text("Next")
+                            .foregroundColor(Color(hex: 0x0A0A0A))
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Color(hex: 0xFFEBD6))
+                            .cornerRadius(40)
+                            .font(.custom("Quicksand-Bold", size: 18))
+                            .multilineTextAlignment(.center)
+                            .lineLimit(2)
+                    }
+                    .padding(.horizontal, 110)
+                    
+                    Spacer().frame(height: 20)
                 }
-                
-                Spacer().frame(height: 30)
-                
-                Button(action: {
-                    // Handle next action
-                }) {
-                    Text("Next")
-                        .foregroundColor(Color(hex: 0x0A0A0A))
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(Color(hex: 0xFFEBD6))
-                        .cornerRadius(40)
-                        .font(.custom("Quicksand-Bold", size: 18))
-                        .multilineTextAlignment(.center)
-                        .lineLimit(2)
-                }
-                .padding(.horizontal, 110)
-                
-                Spacer().frame(height: 20)
             }
+            .navigationBarHidden(true) // Hide the navigation bar in this view
         }
     }
     
