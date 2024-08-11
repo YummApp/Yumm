@@ -22,6 +22,8 @@
 		3D9589692C60492800A49581 /* YummColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9589502C6047A900A49581 /* YummColors.swift */; };
 		3D95896A2C60492800A49581 /* YummColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9589502C6047A900A49581 /* YummColors.swift */; };
 		A8AC1D5D2C6190B400C7F7E1 /* UserSignUpView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AC1D5C2C6190B400C7F7E1 /* UserSignUpView2.swift */; };
+		A8D11DB62C66D29400F4843A /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D11DB52C66D29400F4843A /* ForgotPasswordView.swift */; };
+		A8D11DB82C66DEE600F4843A /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D11DB72C66DEE600F4843A /* ChangePasswordView.swift */; };
 		A8DD16812C642A6C005F7A12 /* CuisineSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DD16802C642A6C005F7A12 /* CuisineSelectView.swift */; };
 		A8DD16832C642A7F005F7A12 /* DietSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DD16822C642A7F005F7A12 /* DietSelectView.swift */; };
 		E76F64F72C6083100089C76B /* Quicksand-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E76F64742C6083100089C76B /* Quicksand-Bold.ttf */; };
@@ -76,6 +78,8 @@
 		3D9589532C6047BF00A49581 /* YummFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YummFonts.swift; sourceTree = "<group>"; };
 		3D95896B2C6049BE00A49581 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A8AC1D5C2C6190B400C7F7E1 /* UserSignUpView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignUpView2.swift; sourceTree = "<group>"; };
+		A8D11DB52C66D29400F4843A /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
+		A8D11DB72C66DEE600F4843A /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
 		A8DD16802C642A6C005F7A12 /* CuisineSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuisineSelectView.swift; sourceTree = "<group>"; };
 		A8DD16822C642A7F005F7A12 /* DietSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietSelectView.swift; sourceTree = "<group>"; };
 		E76F64742C6083100089C76B /* Quicksand-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.ttf"; sourceTree = "<group>"; };
@@ -189,11 +193,13 @@
 			isa = PBXGroup;
 			children = (
 				3D9589492C60478500A49581 /* UserLogIn.swift */,
+				A8D11DB72C66DEE600F4843A /* ChangePasswordView.swift */,
 				A8DD16802C642A6C005F7A12 /* CuisineSelectView.swift */,
 				A8DD16822C642A7F005F7A12 /* DietSelectView.swift */,
 				3D95894B2C60478E00A49581 /* IntroView.swift */,
 				3D95894D2C60479A00A49581 /* UserSignUpView.swift */,
 				A8AC1D5C2C6190B400C7F7E1 /* UserSignUpView2.swift */,
+				A8D11DB52C66D29400F4843A /* ForgotPasswordView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -366,11 +372,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8DD16812C642A6C005F7A12 /* CuisineSelectView.swift in Sources */,
+				A8D11DB62C66D29400F4843A /* ForgotPasswordView.swift in Sources */,
 				3D95891F2C60475600A49581 /* ContentView.swift in Sources */,
 				3D95894C2C60478E00A49581 /* IntroView.swift in Sources */,
 				A8AC1D5D2C6190B400C7F7E1 /* UserSignUpView2.swift in Sources */,
 				A8DD16832C642A7F005F7A12 /* DietSelectView.swift in Sources */,
 				3D95894A2C60478500A49581 /* UserLogIn.swift in Sources */,
+				A8D11DB82C66DEE600F4843A /* ChangePasswordView.swift in Sources */,
 				3D95891D2C60475600A49581 /* YummApp.swift in Sources */,
 				3D9589542C6047BF00A49581 /* YummFonts.swift in Sources */,
 				3D95894E2C60479A00A49581 /* UserSignUpView.swift in Sources */,
